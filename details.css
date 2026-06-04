@@ -1,0 +1,362 @@
+/* General page setup */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header (reuse same style as main site) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+nav a.active {
+  color: #2e7d32;
+}
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2e7d32;
+  border-radius: 2px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-container img {
+  height: 45px;
+}
+.green-text { color: #2e7d32; }
+.user-icon img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Details Section */
+.details {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.details-header {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 0;        /* remove inline gaps */
+  pointer-events: none;  /* allow clicks to pass through except the button */
+  transform: none;       /* prevent inherited transforms from shifting children */
+}
+.details-img {
+  display: block;
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  pointer-events: auto;  /* image itself won't block controls (wrapper is pointer-events:none) */
+}
+/* Force the back button to the top-left of the image */
+.back-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(230,249,230,0.98);
+  color: #1b5e20;
+  border: 2px solid #1b5e20;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  transition: transform 0.12s ease, background 0.12s ease;
+  pointer-events: auto;  /* re-enable clicks for the button */
+}
+/* Hover state */
+.back-btn:hover {
+  background: rgba(215,243,215,0.98);
+  transform: translateY(-2px);
+}
+/* Details info column */
+.details-info {
+  position: relative;
+  z-index: 2;
+}
+.details-info h2 {
+  font-size: 2em;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+.details-info .rating {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+.details-info .tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.details-info .tag {
+  background: #e6f9e6;
+  color: #1b5e20;
+  border: 1px solid #cfead0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 0.95em;
+}
+.details-info .description {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Info cards row (Safety Level / Best Time) */
+.info-grid {
+  display: flex;
+  gap: 12px;
+  margin: 14px 0 18px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  min-width: 220px;
+  flex: 1 1 220px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(230,249,230,0.9), rgba(230,249,230,0.6));
+  flex: 0 0 44px;
+}
+
+.info-body { text-align: left; }
+
+.info-label {
+  font-size: 0.85rem;
+  color: #556;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #1b5e20;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+/* Small screens: stack */
+@media (max-width: 520px) {
+  .info-grid { flex-direction: column; gap: 10px; }
+  .info-card { min-width: auto; }
+}
+
+
+/* Review Form */
+.review-form {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+.review-form h3 {
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+/* Interactive stars (buttons) */
+.stars {
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.star {
+  font-size: 1.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  padding: 2px 6px;
+  line-height: 1;
+}
+.star:hover,
+.star.hovered,
+.star.selected {
+  color: gold;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.star:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.12);
+  border-radius: 4px;
+}
+
+/* Textarea and actions */
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1em;
+  resize: vertical;
+}
+.review-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+#reviewerName {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Submit button */
+.review-form .btn {
+  background: #2e7d32;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.review-form .btn:hover {
+  background: #1b5e20;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-top: 40px;
+}
+.reviews-section h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+/* Each review card */
+.reviews-section .review {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.reviews-section .review .meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+.reviews-section .review .text {
+  color: #333;
+  font-size: 1rem;
+}
+.review {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.review p {
+  margin: 5px 0;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  pointer-events: none;    /* let other controls be clickable */
+  overflow: visible;       /* allow the link to sit outside the image bounds */
+}
+
+/* text-only "Back to Spots" placed just outside top-left of the image */
+.back-btn {
+  position: absolute;
+  top: -12px;              /* negative to move above the image */
+  left: -12px;             /* negative to move left of the image */
+  z-index: 9999;
+  pointer-events: auto;    /* make the link clickable */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #1b5e20;          /* green text to match theme */
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;   /* plain text look */
+  line-height: 1;
+}
+
+/* subtle focus style for keyboard users */
+.back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.12);
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .details-img {
+    width: 100%;
+    max-width: 500px;
+  }
+  .back-btn {
+    top: -10px;
+    left: -8px;
+    font-size: 0.95rem;
+  }
+}

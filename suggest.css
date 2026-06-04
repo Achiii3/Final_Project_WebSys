@@ -1,0 +1,149 @@
+:root{
+  --green:#2e7d32;
+  --green-600:#1b5e20;
+  --muted:#f6f8f7;
+  --card:#ffffff;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(12,20,12,0.06);
+  --accent:#e6f9e6;
+  --muted-text:#556;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--muted);color:#222}
+a{color:inherit;text-decoration:none}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:48px}
+.logo .brand{font-weight:800;color:var(--green);font-size:1.15rem}
+
+/* Nav */
+nav{display:flex;gap:18px;align-items:center}
+nav a{padding:8px 12px;border-radius:10px;font-weight:700;color:#333}
+nav a.active{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(27,94,32,0.08)}
+
+/* Page container */
+main{max-width:980px;margin:36px auto;padding:20px}
+
+/* Card */
+.card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)}
+
+/* Headings */
+h1{margin:0 0 6px;color:var(--green);font-size:1.5rem}
+p.lead{margin:0 0 18px;color:var(--muted-text);font-size:0.98rem}
+
+/* Form grid */
+form .row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+label{display:block;font-weight:700;margin-bottom:8px;color:#333}
+input[type="text"], textarea, select {
+  width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e6e6e6;background:#fff;font-size:0.98rem;color:#222;
+}
+textarea{min-height:120px;resize:vertical;line-height:1.45}
+.col-2{flex:1 1 48%}
+.col-3{flex:1 1 30%}
+
+/* Tags and safety */
+.tags-grid{display:flex;gap:8px;flex-wrap:wrap}
+.tag-checkbox{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f3fbf3;border:1px solid #d9efd9;color:var(--green-600);font-weight:700;cursor:pointer}
+.safety-row{display:flex;gap:12px;align-items:center}
+
+/* Upload box */
+.upload-box{width:100%;border-radius:12px;border:2px dashed rgba(46,125,50,0.12);background:linear-gradient(180deg, rgba(230,249,230,0.6), rgba(255,255,255,0.4));padding:18px;display:flex;align-items:center;gap:14px;min-height:120px;cursor:pointer;transition:box-shadow .12s ease,transform .06s ease}
+.upload-box:hover{box-shadow:0 8px 20px rgba(27,94,32,0.06);transform:translateY(-2px)}
+.upload-icon{width:56px;height:56px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 14px rgba(0,0,0,0.04)}
+.upload-meta{display:flex;flex-direction:column;gap:4px}
+.upload-meta .title{font-weight:800;color:var(--green);font-size:1rem}
+.upload-meta .hint{font-size:0.92rem;color:var(--muted-text)}
+
+/* Hidden native input */
+.input-hidden{position:absolute;left:-9999px;}
+
+/* Preview */
+.photo-preview{width:100%;height:220px;border-radius:12px;overflow:hidden;background:#f8faf8;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid rgba(0,0,0,0.03)}
+.photo-preview img{width:100%;height:100%;object-fit:cover;display:block}
+.preview-placeholder{color:#999;font-weight:700}
+.cropped-thumb{width:100%;height:100%;object-fit:cover;display:block}
+.crop-toggle{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.95);border-radius:8px;padding:8px 10px;border:1px solid #eee;color:var(--green);font-weight:700;cursor:pointer;z-index:30}
+
+/* Actions */
+.actions{display:flex;gap:12px;align-items:center}
+.btn{padding:12px 18px;border-radius:12px;border:none;font-weight:800;cursor:pointer}
+.btn.primary{background:var(--green);color:#fff;box-shadow:0 10px 26px rgba(27,94,32,0.08)}
+.btn.primary:hover{background:var(--green-600)}
+.btn.ghost{background:transparent;border:2px solid rgba(27,94,32,0.08);color:var(--green)}
+
+/* Inline Crop button styling (appears between Submit and Clear) */
+.btn.crop-inline{
+  background:#fff;
+  color:var(--green);
+  border:2px solid rgba(27,94,32,0.08);
+  font-weight:800;
+  padding:10px 14px;
+  border-radius:12px;
+  box-shadow:none;
+}
+.btn.crop-inline:hover{
+  background:rgba(230,249,230,0.9);
+  border-color:var(--green-600);
+}
+
+/* Messages */
+.msg{padding:10px;border-radius:10px;margin-top:12px;font-weight:700}
+.msg.error{background:#fff5f5;color:#b00000;border:1px solid #f5c2c2}
+.msg.success{background:#eafaf0;color:#1b5e20;border:1px solid #cfead0}
+
+/* Confirmation */
+#confirmationCard{display:none}
+.confirmation .thumb{width:120px;height:84px;border-radius:10px;background:#f0f0f0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+
+/* Cropper overlay */
+.cropper-root{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:9999}
+.cropper-root.active{display:flex}
+.cropper-stage{width:min(92%,900px);max-height:86vh;background:#fff;border-radius:12px;padding:12px;overflow:auto}
+.cropper-preview{height:420px;background:#f6f6f6;display:flex;align-items:center;justify-content:center}
+.cropper-controls{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.cropper-btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;background:#fff;color:var(--green);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.cropper-btn.primary{background:var(--green);color:#fff}
+.cropper-btn.ghost{background:transparent;border:1px solid #dcdcdc;color:#333}
+
+/* Crop size controls (added) */
+.crop-size-controls select,
+.crop-size-controls input[type="number"] {
+  font-size: 0.95rem;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+#customSizeInputs {
+  display: none;
+  gap: 6px;
+  align-items: center;
+}
+#customSizeInputs input {
+  -moz-appearance: textfield;
+  width: 84px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+#customSizeInputs input::-webkit-outer-spin-button,
+#customSizeInputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Illustration (optional) */
+.page-illustration{position:fixed;right:18px;bottom:18px;width:140px;opacity:0.95;pointer-events:none;z-index:5}
+
+/* Responsive */
+@media (max-width:720px){
+  .col-2,.col-3{flex:1 1 100%}
+  .photo-preview{height:160px}
+  .upload-box{min-height:100px;padding:12px}
+  .cropper-preview{height:260px}
+  .page-illustration{display:none}
+}

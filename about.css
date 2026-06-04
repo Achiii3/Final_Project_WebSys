@@ -1,0 +1,127 @@
+/* about.css — styles for About page */
+
+:root {
+  --green: #2e7d32;
+  --green-dark: #1b5e20;
+  --muted: #f9f9f9;
+  --card-bg: #fff;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.about-page {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.hero-content h1 {
+  margin: 0 0 8px 0;
+  color: var(--green);
+  font-size: 1.6rem;
+}
+.hero-content .lead {
+  margin: 0;
+  color: #556;
+  font-size: 1rem;
+}
+.hero-illustration img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* Mission card */
+.mission-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 18px 0;
+}
+.mission-card h2 { color: var(--green); margin-top: 0; }
+
+/* How it works */
+.how-it-works { margin: 18px 0; }
+.how-it-works h2 { color: var(--green); margin-bottom: 12px; }
+.steps { display: flex; gap: 12px; flex-wrap: wrap; }
+.step {
+  flex: 1 1 220px;
+  background: #f7fff7;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #e6f9e6;
+}
+.step h3 { margin: 0 0 6px 0; color: var(--green-dark); }
+
+/* Team */
+.team { margin: 18px 0; }
+.team h2 { color: var(--green); margin-bottom: 12px; }
+.team-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+.member {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 12px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  text-align: left;
+}
+.member img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.member h4 { margin: 8px 0 4px 0; color: #2e7d32; }
+.member .role { margin: 0 0 8px 0; color: #666; font-weight:700; }
+.member .bio { margin: 0; color: #444; font-size: 0.95rem; }
+
+/* Contribute and FAQ */
+.contribute, .faq, .contact-card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 18px 0;
+}
+.contribute h2, .faq h2, .contact-card h2 { color: var(--green); margin-top: 0; }
+.qa { margin-bottom: 10px; }
+.q { font-weight:700; color:#333; }
+.a { color:#444; margin-top:6px; }
+
+/* Footer */
+.site-footer {
+  margin-top: 28px;
+  padding: 18px 0;
+  background: transparent;
+}
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#666;
+}
+.footer-nav a { margin-left:12px; color:#666; text-decoration:none; }
+
+/* Responsive */
+@media (max-width: 820px) {
+  .hero { flex-direction: column; align-items:flex-start; }
+  .team-grid { justify-content: space-between; }
+  .member { width: 100%; }
+  .steps { flex-direction: column; }
+}

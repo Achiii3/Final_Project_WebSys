@@ -1,0 +1,473 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Navigation */
+header {
+  display: flex;
+  justify-content: space-between; /* logo left, user icon right */
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+  flex: 1;                  
+  display: flex;
+  justify-content: center;  
+  gap: 40px;                
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;       
+}
+
+nav a:hover {
+  color: #2e7d32;
+}
+
+nav a.active {
+  color: #2e7d32; 
+  border-bottom: 3px solid #2e7d32;          
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;             
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2e7d32;      
+  border-radius: 2px;
+}
+
+/* Logo + Name */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-container img {
+  height: 45px;   
+  width: auto;
+}
+.logo-container h2 {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+.green-text {
+  color: #2e7d32; 
+}
+
+/* User Icon */
+.user-icon img {
+  height: 50px;   
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px; 
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background: #ffffff;
+}
+.hero-text {
+  max-width: 50%;
+}
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.btn {
+  background: #2e7d32;       
+  color: #fff;
+  padding: 18px 30px;        
+  border: none;
+  border-radius: 15px;       
+  cursor: pointer;
+  font-size: 1.2em;          
+  font-weight: bold;         
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #1b5e20;
+  transform: scale(1.05);    
+}
+
+/* Features Section (Safe, Wi-Fi, Quiet) */
+.features {
+  display: flex;
+  flex-direction: row;   
+  gap: 20px;
+  padding: 50px;
+  background: #fff;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 35px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+.icon-img {
+  height: 90px;
+  width: auto;
+  flex-shrink: 0;
+}
+.feature-text h3 {
+  margin: 0 0 5px;
+  font-size: 1.3em;
+  color: #333;
+}
+.feature-text p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Featured Spot Section */
+.featured {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 40px;
+  padding: 50px;
+  background: #e3f2fd;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.featured img {
+  width: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.featured-info {
+  flex: 1;                  
+}
+.featured-info h2 {
+  font-size: 1.8em;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+.featured-info h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 10px;
+}
+.stars {
+  color: gold;
+  font-size: 1.2em;
+  margin-left: 8px;
+}
+.featured-info p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Spots Page */
+.spots {
+  padding: 50px;
+  background: #f9f9f9;
+  max-width: 1200px;   /* keeps everything aligned */
+  margin: 0 auto;      /* center the whole section */
+}
+
+.spots h2 {
+  text-align: left;    /* align heading with content */
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+/* Search + Filter Bar */
+.spot-filters {
+  display: flex;
+  justify-content: space-between; /* search left, filters right */
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;                /* wrap neatly on smaller screens */
+}
+
+.search-wrapper {
+  position: relative;
+  width: 400px;                   /* fixed width for search bar */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px 5px 12px 18px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  font-size: 1em;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;      /* push buttons to the right */
+}
+
+.filter {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filter:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+.filter.active {
+  background: #2e7d32;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Spot Cards */
+.spot-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.spot-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.spot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.spot-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.spot-info {
+  padding: 20px;
+  text-align: center; /* centers the button and keeps text readable */
+}
+
+/* Exact "View Details" button — replace existing .spot-card .btn */
+.spot-card .btn {
+  display: inline-block;
+  min-width: 160px;
+  padding: 8px 20px;
+  background-color: #e6f9e6;
+  color: #1b5e20;
+  border: 2px solid #1b5e20;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1;
+  box-shadow: none;
+  transition: background 0.12s ease, transform 0.08s ease;
+}
+
+/* Hover and active states */
+.spot-card .btn:hover {
+  background-color: #d7f3d7;
+  transform: translateY(-2px);
+}
+.spot-card .btn:active {
+  transform: translateY(0);
+}
+
+.spot-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.rating {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.tags {
+  font-size: 0.95em;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.reviews-section {
+  margin-top: 30px;
+}
+
+.rating {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.active {
+  color: gold;
+}
+
+#reviewText {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#reviewsList {
+  margin-top: 20px;
+}
+
+/* =========================
+   Interactive filter + tags
+   ========================= */
+
+/* Make filter buttons more interactive and accessible */
+.filter {
+  outline: none;
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.filter:hover {
+  background: #e6e6e6;
+  transform: translateY(-1px);
+}
+
+.filter:focus {
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.12);
+}
+
+/* stronger active visual */
+.filter.active {
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+/* Tag chips styling (replace plain text tags) */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0 15px;
+  padding: 0;
+}
+
+.tag {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  background: #e6f9e6;
+  color: #1b5e20;
+  border: 1px solid #cfead0;
+  border-radius: 999px;
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.12s ease, box-shadow 0.12s ease;
+}
+
+.tag:hover {
+  background: #d7f3d7;
+  transform: translateY(-1px);
+}
+
+.tag:focus {
+  background: #d7f3d7;
+  box-shadow: 0 4px 10px rgba(27,94,32,0.06);
+  outline: none;
+}
+
+body.filter-all .tags .tag {
+  width: 110px;   /* fixed width */
+  height: 34px;   /* fixed height */
+  flex: 0 0 110px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filter {
+  flex: 0 0 auto;                 /* prevent filter buttons from stretching */
+}
+
+.spot-card.hidden {
+  display: none !important;
+  opacity: 0;
+  transform: scale(0.995);
+  transition: opacity 0.18s ease, transform 0.12s ease;
+}
+
+/* Smooth reveal when removing hidden class */
+.spot-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+/* Accessibility: visible focus for keyboard users */
+.filter:focus-visible,
+.tag:focus-visible,
+.spot-card .btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.16);
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .filter { padding: 8px 14px; font-size: 0.9em; }
+  .tag { padding: 6px 8px; font-size: 0.9em; }
+  .search-wrapper { width: 100%; }
+}
