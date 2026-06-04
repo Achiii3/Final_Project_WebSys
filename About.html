@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About — StudySpot</title>
+  <link rel="stylesheet" href="style.css">    <!-- global styles -->
+  <link rel="stylesheet" href="about.css">    <!-- about page styles -->
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="image/StudySpot.png" alt="StudySpot Logo">
+      <h2><span class="green-text">Study</span>Spot</h2>
+    </div>
+    <nav>
+      <a href="Index.html">Home</a>
+      <a href="Spots.html">Spots</a>
+      <a href="Suggest.html">Suggest</a>
+      <a href="About.html" class="active">About</a>
+    </nav>
+    <div class="user-icon">
+      <img src="image/user.png" alt="User Icon">
+    </div>
+  </header>
+
+  <main class="about-page">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>About StudySpot</h1>
+        <p class="lead">A community-driven guide to the best places to study — quiet corners, cozy cafés, and safe public spaces near you.</p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <img src="image/books-illustration.png" alt="">
+      </div>
+    </section>
+
+    <section class="mission-card">
+      <h2>Our Mission</h2>
+      <p>We help students and lifelong learners find comfortable, safe, and productive places to study. StudySpot collects real user experiences so you can choose the right spot for focused work, group study, or casual reading.</p>
+    </section>
+
+    <section class="how-it-works">
+      <h2>How StudySpot Works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Suggest</h3>
+          <p>Anyone can suggest a spot using the <a href="suggest.html">Suggest</a> form — add a short description, tags, and an optional photo.</p>
+        </div>
+        <div class="step">
+          <h3>Review</h3>
+          <p>Visitors can leave ratings and reviews on each spot’s details page. Reviews are stored locally and shown immediately.</p>
+        </div>
+        <div class="step">
+          <h3>Discover</h3>
+          <p>Browse the Spots page to filter by tags like <strong>Quiet</strong>, <strong>Wi‑Fi</strong>, and <strong>Safe</strong>, or search for places near you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="member">
+          <img src="image/riksihi1.jpg" alt="Rikishi — Founder">
+          <h4>Rikishi Almonte</h4>
+          <p class="role">Founder</p>
+          <p class="bio">Built StudySpot to help students find better study environments and to make local knowledge easy to share.</p>
+        </div>
+        <div class="member">
+          <img src="image/rayver.jpg" alt="Rayver — Product">
+          <h4>Rayver Villaganas</h4>
+          <p class="role">Product</p>
+          <p class="bio">Designs the user experience and keeps the site simple and fast for everyone.</p>
+        </div>
+        <div class="member">
+          <img src="image/elijah.jpg" alt="Elijah — Community">
+          <h4>Elijah Baligod</h4>
+          <p class="role">Community</p>
+          <p class="bio">Engages with contributors and curates featured spots and suggestions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribute">
+      <h2>Contribute</h2>
+      <p>Want to help? You can:</p>
+      <ul>
+        <li>Suggest a spot using the <a href="suggest.html">Suggest</a> page.</li>
+        <li>Leave honest reviews on spot detail pages.</li>
+        <li>Share StudySpot with classmates and friends.</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      <div class="qa">
+        <div class="q"><strong>Are suggestions moderated?</strong></div>
+        <div class="a">Currently suggestions are stored locally and visible to you. If you want server-side moderation or public listing, we can add that later.</div>
+      </div>
+      <div class="qa">
+        <div class="q"><strong>How are ratings calculated?</strong></div>
+        <div class="a">Ratings are averaged from submitted reviews and shown on each spot. On the Spots page we display the aggregated average and review count.</div>
+      </div>
+    </section>
+
+    <section class="contact-card">
+      <h2>Contact</h2>
+      <p>Questions, feedback, or partnership inquiries? Email us at <a href="villaganasrr1@students.national-u.edu.ph">villaganasrr1@students.national-u.edu.ph</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> StudySpot — Built for learners.</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // small script to set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
